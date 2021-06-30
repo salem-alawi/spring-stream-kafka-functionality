@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    function:
+      definition: sinkEventChanel;simpleProcessEvent
+    stream:
+      bindings:
+        sinkEventChanel-in-0:
+          destination: simpleTopic
+          group: groupOne
+        simpleProcessEvent-in-0:
+          destination: needUperCaseProcessTopic
+          group: groupOne
+        simpleProcessEvent-out-0:
+          destination: simpleTopic
+        sourceToProcess-out-0:
+          destination: needUperCaseProcessTopic
+        sinkEventChanel-out-0:
+          destination: simpleTopic
